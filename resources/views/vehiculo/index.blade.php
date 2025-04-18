@@ -30,15 +30,15 @@
                     <td>{{ $vehiculo->kilometraje }}</td>
                     <td>{{ $vehiculo->tipo }}</td>
                     <td>
-                        {{-- <a href="{{route('vehiculos.edit', ['vehiculo' => $vehiculo->muni_codi])}}"
-                        class="btn btn-info">Edit</a></li>
+                        {{-- <a href="{{route('vehiculos.edit', ['vehiculo' => $vehiculo->id])}}"
+                        class="btn btn-info">Edit</a></li> --}}
 
-                      <form action="{{route('vehiculos.destroy',['vehiculo' => $vehiculo->muni_codi])}}"
+                      <form action="{{route('vehiculos.destroy',['vehiculo' => $vehiculo->id])}}"
                         method="POST" style="display: inline-block">
                         @method('delete')
                         @csrf
                         <input type="submit" class="btn btn-danger" value="Delete">
-                      </form> --}}
+                      </form>
                     </td>
                 </tr> 
             @endforeach

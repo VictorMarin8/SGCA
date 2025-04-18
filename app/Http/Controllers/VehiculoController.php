@@ -76,6 +76,9 @@ class VehiculoController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $vehiculo = Vehiculo::find($id);
+        $vehiculo->delete();
+
+        return redirect()->route('vehiculos.index');
     }
 }
