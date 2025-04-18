@@ -60,7 +60,13 @@ class VehiculoController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $vehiculo = Vehiculo::findOrFail($id);
+        $todosLosVehiculos = Vehiculo::all();
+
+        return view('vehiculo.edit', [
+            'vehiculo' => $vehiculo,
+            'vehiculos' => $todosLosVehiculos
+        ]);
     }
 
     /**
@@ -68,7 +74,17 @@ class VehiculoController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $vheiculo = Vehiculo::find($id);
+
+        $vheiculo -> marca = $request->marca;
+        $vheiculo -> modelo = $request->modelo;
+        $vheiculo -> anio = $request->anio;
+        $vheiculo -> precio = $request->precio;
+        $vheiculo -> kilometraje = $request->kilometraje;
+        $vheiculo -> tipo = $request->tipo;
+        $vheiculo -> save();
+
+        return redirect()->route('vehiculos.index');
     }
 
     /**

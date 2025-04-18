@@ -30,8 +30,8 @@
                     <td>{{ $vehiculo->kilometraje }}</td>
                     <td>{{ $vehiculo->tipo }}</td>
                     <td>
-                        {{-- <a href="{{route('vehiculos.edit', ['vehiculo' => $vehiculo->id])}}"
-                        class="btn btn-info">Edit</a></li> --}}
+                        <a href="{{route('vehiculos.edit', ['vehiculo' => $vehiculo->id])}}"
+                        class="btn btn-info">Edit</a></li>
 
                       <form action="{{route('vehiculos.destroy',['vehiculo' => $vehiculo->id])}}"
                         method="POST" style="display: inline-block">
