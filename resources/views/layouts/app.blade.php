@@ -26,7 +26,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="bi bi-truck-front me-1"></i>Vehículos</a>
+                            <a class="nav-link" href="{{ url('/vehiculos') }}"><i class="bi bi-truck-front me-1"></i>Vehículos</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#"><i class="bi bi-people me-1"></i>Clientes</a>
