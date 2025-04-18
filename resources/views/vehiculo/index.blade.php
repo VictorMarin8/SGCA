@@ -6,7 +6,7 @@
    
 <div class="container">
     <h1>Listado de vehiculos</h1>
-    {{-- <a href="{{ route('vehiculos.create')}}" class="btn btn-success">Add</a> --}}
+    <a href="{{ route('vehiculos.create')}}" class="btn btn-success">Add</a>
     <table class="table">
         <thead>
           <tr>
