@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.logo {
+    width: 30%;
+}
+
+.navbar{
+    background-color: rgb(164, 164, 164);
+}
+
+body{
+    position: relative;
+    min-height: 100vh;
+    padding-bottom: 80px;
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0.278);
+    height: 40px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
