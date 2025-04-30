@@ -26,39 +26,50 @@
                 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <!-- Botón Vehículos -->
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/vehiculos') }}">
+                            <a class="nav-link" href="{{ route('vehiculos.index') }}">
                                 <i class="bi bi-truck-front me-1"></i>Vehículos
                             </a>
                         </li>
+                        
+                        <!-- Botón Clientes -->
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="{{ route('clientes.index') }}">
                                 <i class="bi bi-people me-1"></i>Clientes
                             </a>
                         </li>
+                        
+                        <!-- Botón Ventas -->
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="{{ route('ventas.index') }}">
                                 <i class="bi bi-cart me-1"></i>Ventas
                             </a>
                         </li>
 
                         @auth
-                       
-                        <li class="nav-item">
+                        <!-- Botón Cerrar Sesión -->
+                        <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
                             <form action="{{ route('logout') }}" method="POST" style="display: inline;">
                                 @csrf
-                                <button type="submit" class="btn btn-danger">Cerrar sesión</button>
+                                <button type="submit" class="btn btn-danger btn-sm">
+                                    <i class="bi bi-box-arrow-right"></i> Cerrar sesión
+                                </button>
                             </form>
                         </li>
                         @endauth
 
                         @guest
-                      
+                        <!-- Botones de Autenticación -->
                         <li class="nav-item">
-                            <a href="{{ route('login') }}" class="btn btn-outline-primary me-2">Iniciar sesión</a>
+                            <a href="{{ route('login') }}" class="btn btn-outline-primary me-2">
+                                <i class="bi bi-box-arrow-in-right"></i> Iniciar sesión
+                            </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('register') }}" class="btn btn-outline-secondary">Registrarse</a>
+                            <a href="{{ route('register') }}" class="btn btn-outline-secondary">
+                                <i class="bi bi-person-plus"></i> Registrarse
+                            </a>
                         </li>
                         @endguest
                     </ul>
