@@ -16,6 +16,10 @@ class Venta extends Model
         'precio_final'
     ];
 
+    protected $casts = [
+        'fecha_venta' => 'date', // Esto convertirá automáticamente el string a objeto Carbon
+    ];
+
     public function vehiculo()
     {
         return $this->belongsTo(Vehiculo::class);

@@ -17,7 +17,7 @@ class VentaController extends Controller
 
     public function create()
     {
-        $vehiculos = Vehiculo::where('estado', 'disponible')->get();
+        $vehiculos = Vehiculo::all();
         $clientes = Cliente::all();
         return view('ventas.create', compact('vehiculos', 'clientes'));
     }
@@ -30,11 +30,6 @@ class VentaController extends Controller
             'fecha_venta' => 'required|date',
             'precio_final' => 'required|numeric'
         ]);
-
-        // Actualizar el estado del vehículo
-        $vehiculo = Vehiculo::find($request->vehiculo_id);
-        $vehiculo->estado = 'vendido';
-        $vehiculo->save();
 
         Venta::create($request->all());
 
@@ -71,13 +66,7 @@ class VentaController extends Controller
 
     public function destroy(Venta $venta)
     {
-        // Restaurar el estado del vehículo
-        $vehiculo = $venta->vehiculo;
-        $vehiculo->estado = 'disponible';
-        $vehiculo->save();
-
         $venta->delete();
-
         return redirect()->route('ventas.index')
                          ->with('success', 'Venta eliminada exitosamente');
     }
